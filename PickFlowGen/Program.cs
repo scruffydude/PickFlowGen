@@ -132,7 +132,7 @@ namespace PickFlowGen
 
 
 
-            using (StreamWriter output = new StreamWriter(path + @"\pftest.txt"))
+            using (StreamWriter output = new StreamWriter(path + GetFileName()))
             {
                 for (int i = sequence.Length; i-- > 0;)
                 {
@@ -175,7 +175,9 @@ namespace PickFlowGen
             int startFlag = 0;
             int total = 0;
 
-            using (StreamWriter output = new StreamWriter(path + @"\pftest.txt"))
+            
+
+            using (StreamWriter output = new StreamWriter(path + GetFileName()))
             {
                 for (int i = 0; i < 62; i++)
                 {
@@ -245,6 +247,13 @@ namespace PickFlowGen
             int pos3 = pos1Remainder % sequence.Length;
             string PFIndex = sequence[pos1Value].ToString()+sequence[pos2Value].ToString()+sequence[pos3].ToString();
             return PFIndex;
+        }
+        public static string GetFileName()
+        {
+            Console.WriteLine("Please enter the name of the file you wish to create:");
+            string filename = Console.ReadLine();
+            filename = "\\" + filename + ".txt";
+            return filename;
         }
     }
 }
