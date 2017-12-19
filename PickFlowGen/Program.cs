@@ -12,6 +12,7 @@ namespace PickFlowGen
         public static char[] sequence = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
         public static string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
+        [STAThread]
         static void Main(string[] args)
         {
             menu();
@@ -179,13 +180,13 @@ namespace PickFlowGen
 
             using (StreamWriter output = new StreamWriter(path + GetFileName()))
             {
-                for (int i = 0; i < 62; i++)
+                for (int i = 0; i < sequence.Length; i++)
                 {
                     first = sequence[i];
-                    for (int y = 0; y < 62; y++)
+                    for (int y = 0; y < sequence.Length; y++)
                     {
                         second = sequence[y];
-                        for (int x = 0; x < 62; x++)
+                        for (int x = 0; x < sequence.Length; x++)
                         {
                             third = sequence[x];
                             startFlag++;

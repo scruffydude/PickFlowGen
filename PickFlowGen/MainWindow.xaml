@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Window.Content>
+        <StackPanel Margin="0,0,400,0" >
+            <ListBox>
+                <TextBox Text="test" />
+            </ListBox>
+            <Button Name="Start_Button" Height="30" Width="100">
+                Start
+            </Button>
+        </StackPanel>
+    </Window.Content>
+</Window>
